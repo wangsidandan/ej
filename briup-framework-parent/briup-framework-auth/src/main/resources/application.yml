@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: #spring.profiles.active#
+  jackson:
+    time-zone: GMT+8
+
+briup:
+  common:
+    cors:
+      enabled: true
+      allow-domains:
+        - "*"
+    datasource:
+      enabled: true
+    mybatis:
+      enabled: true
+mybatis:
+     type-aliases-package: com.briup.common.domain
+    

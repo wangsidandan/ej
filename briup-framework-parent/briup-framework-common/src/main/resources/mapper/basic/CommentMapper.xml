@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.briup.common.mapper.basic.CommentMapper">
+  <resultMap id="BaseResultMap" type="com.briup.common.domain.basic.Comment">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="comment_time" jdbcType="BIGINT" property="commentTime" />
+    <result column="order_id" jdbcType="BIGINT" property="orderId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from ej_comment
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.briup.common.domain.basic.Comment">
+    insert into ej_comment (id, content, comment_time, 
+      order_id)
+    values (#{id,jdbcType=BIGINT}, #{content,jdbcType=VARCHAR}, #{commentTime,jdbcType=BIGINT}, 
+      #{orderId,jdbcType=BIGINT})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.briup.common.domain.basic.Comment">
+    update ej_comment
+    set content = #{content,jdbcType=VARCHAR},
+      comment_time = #{commentTime,jdbcType=BIGINT},
+      order_id = #{orderId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, content, comment_time, order_id
+    from ej_comment
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, content, comment_time, order_id
+    from ej_comment
+  </select>
+</mapper>

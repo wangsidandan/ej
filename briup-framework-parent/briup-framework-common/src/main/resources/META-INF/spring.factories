@@ -1,0 +1,9 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.briup.common.config.CommonJdbcAutoConfig,\
+com.briup.common.config.CommonMybatisAutoConfig,\
+com.briup.common.config.CommonExceptionHandlerAutoConfig,\
+com.briup.common.config.CommonCorsAutoConfig,\
+com.briup.common.config.CommonSwaggerAutoConfig,\
+com.briup.common.config.CommonLoggingAutoConfiguration,\
+com.briup.common.config.CommonWebAutoConfig

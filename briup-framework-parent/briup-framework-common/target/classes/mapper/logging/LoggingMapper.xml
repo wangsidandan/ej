@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.briup.common.mapper.logging.LoggingMapper" >
+  <resultMap id="BaseResultMap" type="com.briup.common.logging.LoggingAccessInfo" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="client_ip" property="clientIp" jdbcType="VARCHAR" />
+    <result column="original_ip" property="originalIp" jdbcType="VARCHAR" />
+    <result column="request_uri" property="requestUri" jdbcType="VARCHAR" />
+    <result column="request_time" property="requestTime" jdbcType="TIMESTAMP" />
+    <result column="response_time" property="responseTime" jdbcType="TIMESTAMP" />
+    <result column="using_time" property="usingTime" jdbcType="VARCHAR" />
+    <result column="request_method" property="requestMethod" jdbcType="VARCHAR" />
+    <result column="declared_method_name" property="declaredMethodName" jdbcType="VARCHAR" />
+    <result column="declared_class_name" property="declaredClassName" jdbcType="VARCHAR" />
+    <result column="referer" property="referer" jdbcType="VARCHAR" />
+    <result column="user_agent" property="userAgent" jdbcType="VARCHAR" />
+    <result column="modular" property="modular" jdbcType="VARCHAR" />
+    <result column="operation" property="operation" jdbcType="VARCHAR" />
+    <result column="logging" property="logging" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="real_name" property="realName" jdbcType="VARCHAR" />
+    <result column="nick_name" property="nickName" jdbcType="VARCHAR" />
+    <result column="accounts" property="accounts" jdbcType="VARCHAR" />
+    <result column="uid" property="uid" jdbcType="VARCHAR" />
+    <result column="successful" property="successful" jdbcType="VARCHAR" />
+    <result column="error_status" property="errorStatus" jdbcType="VARCHAR" />
+    <result column="error_code" property="errorCode" jdbcType="VARCHAR" />
+    <result column="error_message" property="errorMessage" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="unit_id" property="unitId" jdbcType="VARCHAR" />
+    <result column="app" property="app" jdbcType="VARCHAR" />
+    <result column="device" property="device" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from logging
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.briup.common.logging.LoggingAccessInfo" >
+    insert into logging (id, client_ip, original_ip, 
+      request_uri, request_time, response_time, 
+      using_time, request_method, declared_method_name, 
+      declared_class_name, referer, user_agent, 
+      modular, operation, logging, 
+      user_id, real_name, nick_name, 
+      accounts, successful, error_status, 
+      error_code, error_message, uid, 
+      type, unit_id, app, 
+      device)
+    values (#{id,jdbcType=VARCHAR}, #{clientIp,jdbcType=VARCHAR}, #{originalIp,jdbcType=VARCHAR}, 
+      #{requestUri,jdbcType=VARCHAR}, #{requestTime,jdbcType=TIMESTAMP}, #{responseTime,jdbcType=TIMESTAMP}, 
+      #{usingTime,jdbcType=VARCHAR}, #{requestMethod,jdbcType=VARCHAR}, #{declaredMethodName,jdbcType=VARCHAR}, 
+      #{declaredClassName,jdbcType=VARCHAR}, #{referer,jdbcType=VARCHAR}, #{userAgent,jdbcType=VARCHAR}, 
+      #{modular,jdbcType=VARCHAR}, #{operation,jdbcType=VARCHAR}, #{logging,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}, 
+      #{accounts,jdbcType=VARCHAR}, #{successful,jdbcType=VARCHAR}, #{errorStatus,jdbcType=VARCHAR}, 
+      #{errorCode,jdbcType=VARCHAR}, #{errorMessage,jdbcType=VARCHAR}, #{uid,jdbcType=VARCHAR}, 
+      #{type,jdbcType=INTEGER}, #{unitId,jdbcType=VARCHAR}, #{app,jdbcType=VARCHAR}, 
+      #{device,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.briup.common.logging.LoggingAccessInfo" >
+    update logging
+    set client_ip = #{clientIp,jdbcType=VARCHAR},
+      original_ip = #{originalIp,jdbcType=VARCHAR},
+      request_uri = #{requestUri,jdbcType=VARCHAR},
+      request_time = #{requestTime,jdbcType=TIMESTAMP},
+      response_time = #{responseTime,jdbcType=TIMESTAMP},
+      using_time = #{usingTime,jdbcType=VARCHAR},
+      request_method = #{requestMethod,jdbcType=VARCHAR},
+      declared_method_name = #{declaredMethodName,jdbcType=VARCHAR},
+      declared_class_name = #{declaredClassName,jdbcType=VARCHAR},
+      referer = #{referer,jdbcType=VARCHAR},
+      user_agent = #{userAgent,jdbcType=VARCHAR},
+      modular = #{modular,jdbcType=VARCHAR},
+      operation = #{operation,jdbcType=VARCHAR},
+      logging = #{logging,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=VARCHAR},
+      real_name = #{realName,jdbcType=VARCHAR},
+      nick_name = #{nickName,jdbcType=VARCHAR},
+      accounts = #{accounts,jdbcType=VARCHAR},
+      successful = #{successful,jdbcType=VARCHAR},
+      error_status = #{errorStatus,jdbcType=VARCHAR},
+      error_code = #{errorCode,jdbcType=VARCHAR},
+      error_message = #{errorMessage,jdbcType=VARCHAR},
+      uid = #{uid,jdbcType=VARCHAR},
+      type = #{type,jdbcType=INTEGER},
+      unit_id = #{unitId,jdbcType=VARCHAR},
+      app = #{app,jdbcType=VARCHAR},
+      device = #{device,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select id, client_ip, original_ip, request_uri, request_time, response_time, using_time, 
+    request_method, declared_method_name, declared_class_name, referer, user_agent, modular, 
+    operation, logging, user_id, real_name, nick_name, accounts, successful, error_status, 
+    error_code, error_message, uid, type, unit_id, app, device
+    from logging
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, client_ip, original_ip, request_uri, request_time, response_time, using_time, 
+    request_method, declared_method_name, declared_class_name, referer, user_agent, modular, 
+    operation, logging, user_id, real_name, nick_name, accounts, successful, error_status, 
+    error_code, error_message, uid, type, unit_id, app, device
+    from logging
+  </select>
+</mapper>

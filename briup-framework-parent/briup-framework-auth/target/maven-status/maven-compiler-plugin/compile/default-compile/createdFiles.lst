@@ -1,0 +1,11 @@
+com\briup\auth\web\contoller\ResourceController.class
+com\briup\auth\config\AuthorizationServerConfig$1.class
+com\briup\auth\config\SecurityConfig$1.class
+com\briup\auth\config\ResourceServerConfig.class
+com\briup\auth\AuthApplication.class
+com\briup\auth\config\AuthorizationServerConfig$MyUserAuthenticationConverter.class
+com\briup\auth\config\AuthorizationServerConfig$MySerializationUtils.class
+com\briup\auth\config\AuthorizationServerConfig.class
+com\briup\auth\config\SecurityConfig.class
+com\briup\auth\service\MyUserDetailsService.class
+com\briup\auth\config\AuthorizationServerConfig$MySerializationUtils$SaferObjectInputStream.class

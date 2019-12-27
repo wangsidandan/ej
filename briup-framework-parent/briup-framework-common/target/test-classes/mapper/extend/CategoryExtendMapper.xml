@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.briup.common.mapper.extend.CategroyExtendMapper">
+
+  <resultMap type="com.briup.common.domain.extend.CategoryExtend" id="CategoryExtendResultMap" 
+  				extends="com.briup.common.mapper.basic.CategoryMapper.BaseResultMap">
+  		<collection property="children" select="findCategoryByParentId" column="id"></collection>
+  </resultMap>
+  
+  <select id="cascadeFindById" parameterType="long" resultMap="CategoryExtendResultMap">
+  		select * from ej_category where id=#{id}
+  </select>
+  
+   <select id="findCategoryByParentId" parameterType="long" resultType="com.briup.common.domain.basic.Category">
+  		select * from ej_category where parent_id=#{id}
+  </select>
+ <select id="findCategory" resultMap="CategoryExtendResultMap">
+ 	select * from ej_category
+ </select>
+ 
+</mapper>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.briup.common.mapper.basic.CustomerMapper">
+  <resultMap id="BaseResultMap" type="com.briup.common.domain.basic.Customer">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="photo" jdbcType="VARCHAR" property="photo" />
+    <result column="register_time" jdbcType="BIGINT" property="registerTime" />
+    <result column="birthday" jdbcType="BIGINT" property="birthday" />
+    <result column="gender" jdbcType="VARCHAR" property="gender" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from ej_customer
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.briup.common.domain.basic.Customer">
+    insert into ej_customer (id, telephone, password, 
+      username, status, photo, 
+      register_time, birthday, gender
+      )
+    values (#{id,jdbcType=BIGINT}, #{telephone,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{username,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{photo,jdbcType=VARCHAR}, 
+      #{registerTime,jdbcType=BIGINT}, #{birthday,jdbcType=BIGINT}, #{gender,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.briup.common.domain.basic.Customer">
+    update ej_customer
+    set telephone = #{telephone,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      photo = #{photo,jdbcType=VARCHAR},
+      register_time = #{registerTime,jdbcType=BIGINT},
+      birthday = #{birthday,jdbcType=BIGINT},
+      gender = #{gender,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, telephone, password, username, status, photo, register_time, birthday, 
+    gender
+    from ej_customer
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, telephone, password, username, status, photo, register_time, birthday, 
+    gender
+    from ej_customer
+  </select>
+</mapper>

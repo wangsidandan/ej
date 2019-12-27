@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.briup.common.mapper.extend.BaseUserExtendMapper">
+
+  <resultMap type="com.briup.common.domain.extend.BaseUserExtend" id="BaseUserExtendResultMap" extends="com.briup.common.mapper.basic.BaseUserMapper.BaseResultMap">
+  		<collection property="roles" select="com.briup.common.mapper.extend.BaseRoleExtendMapper.findRoleByUserId"
+  		column="id"
+  		></collection>
+  </resultMap>
+  <select id="findUserByName" parameterType="string" resultMap="BaseUserExtendResultMap">
+  		select * from base_user where username=#{username}
+  </select>
+  
+  <select id="cascadeFindAll" resultMap="BaseUserExtendResultMap">
+  		select * from base_user
+  </select>
+ 
+</mapper>

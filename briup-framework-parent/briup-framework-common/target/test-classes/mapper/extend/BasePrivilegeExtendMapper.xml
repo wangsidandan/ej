@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.briup.common.mapper.extend.BasePrivilegeExtendMapper">
+
+<select id="findPrivilegeByRoleId" parameterType="Long" resultType="com.briup.common.domain.basic.BasePrivilege">
+  		 select p.* from base_privilege p,base_role_privilege rp
+        where p.id=rp.privilege_id and rp.role_id=#{id}
+  </select>
+  		
+</mapper>

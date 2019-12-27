@@ -1,0 +1,167 @@
+{
+  "groups": [
+    {
+      "name": "briup.common.auth",
+      "type": "com.briup.common.config.CommonWebAutoConfig",
+      "sourceType": "com.briup.common.config.CommonWebAutoConfig"
+    },
+    {
+      "name": "briup.common.cors",
+      "type": "com.briup.common.config.CommonCorsAutoConfig",
+      "sourceType": "com.briup.common.config.CommonCorsAutoConfig"
+    },
+    {
+      "name": "briup.common.datasource",
+      "type": "com.briup.common.config.CommonJdbcAutoConfig",
+      "sourceType": "com.briup.common.config.CommonJdbcAutoConfig"
+    },
+    {
+      "name": "briup.common.global-exception",
+      "type": "com.briup.common.config.CommonExceptionHandlerAutoConfig",
+      "sourceType": "com.briup.common.config.CommonExceptionHandlerAutoConfig"
+    },
+    {
+      "name": "briup.common.logging",
+      "type": "com.briup.common.config.CommonLoggingAutoConfiguration",
+      "sourceType": "com.briup.common.config.CommonLoggingAutoConfiguration"
+    },
+    {
+      "name": "briup.common.mybatis",
+      "type": "com.briup.common.config.CommonMybatisAutoConfig",
+      "sourceType": "com.briup.common.config.CommonMybatisAutoConfig"
+    },
+    {
+      "name": "briup.common.swagger",
+      "type": "com.briup.common.config.CommonSwaggerAutoConfig",
+      "sourceType": "com.briup.common.config.CommonSwaggerAutoConfig"
+    },
+    {
+      "name": "security.oauth2.client",
+      "type": "com.briup.common.web.auth.LoginController",
+      "sourceType": "com.briup.common.web.auth.LoginController"
+    }
+  ],
+  "properties": [
+    {
+      "name": "briup.common.auth.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.briup.common.config.CommonWebAutoConfig"
+    },
+    {
+      "name": "briup.common.cors.allow-domains",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.briup.common.config.CommonCorsAutoConfig"
+    },
+    {
+      "name": "briup.common.cors.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.briup.common.config.CommonCorsAutoConfig"
+    },
+    {
+      "name": "briup.common.datasource.driver-class-name",
+      "type": "java.lang.String",
+      "sourceType": "com.briup.common.config.CommonJdbcAutoConfig"
+    },
+    {
+      "name": "briup.common.datasource.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.briup.common.config.CommonJdbcAutoConfig"
+    },
+    {
+      "name": "briup.common.datasource.password",
+      "type": "java.lang.String",
+      "sourceType": "com.briup.common.config.CommonJdbcAutoConfig"
+    },
+    {
+      "name": "briup.common.datasource.url",
+      "type": "java.lang.String",
+      "sourceType": "com.briup.common.config.CommonJdbcAutoConfig"
+    },
+    {
+      "name": "briup.common.datasource.username",
+      "type": "java.lang.String",
+      "sourceType": "com.briup.common.config.CommonJdbcAutoConfig"
+    },
+    {
+      "name": "briup.common.global-exception.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.briup.common.config.CommonExceptionHandlerAutoConfig"
+    },
+    {
+      "name": "briup.common.logging.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.briup.common.config.CommonLoggingAutoConfiguration"
+    },
+    {
+      "name": "briup.common.mybatis.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.briup.common.config.CommonMybatisAutoConfig"
+    },
+    {
+      "name": "briup.common.mybatis.mapper-locations",
+      "type": "java.lang.String",
+      "sourceType": "com.briup.common.config.CommonMybatisAutoConfig"
+    },
+    {
+      "name": "briup.common.swagger.ant-paths",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.briup.common.config.CommonSwaggerAutoConfig"
+    },
+    {
+      "name": "briup.common.swagger.base-package",
+      "type": "java.lang.String",
+      "sourceType": "com.briup.common.config.CommonSwaggerAutoConfig"
+    },
+    {
+      "name": "briup.common.swagger.description",
+      "type": "java.lang.String",
+      "sourceType": "com.briup.common.config.CommonSwaggerAutoConfig"
+    },
+    {
+      "name": "briup.common.swagger.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.briup.common.config.CommonSwaggerAutoConfig"
+    },
+    {
+      "name": "briup.common.swagger.terms-of-service-url",
+      "type": "java.lang.String",
+      "sourceType": "com.briup.common.config.CommonSwaggerAutoConfig"
+    },
+    {
+      "name": "briup.common.swagger.title",
+      "type": "java.lang.String",
+      "sourceType": "com.briup.common.config.CommonSwaggerAutoConfig"
+    },
+    {
+      "name": "briup.common.swagger.version",
+      "type": "java.lang.String",
+      "sourceType": "com.briup.common.config.CommonSwaggerAutoConfig"
+    },
+    {
+      "name": "security.oauth2.client.access-token-uri",
+      "type": "java.lang.String",
+      "sourceType": "com.briup.common.web.auth.LoginController"
+    },
+    {
+      "name": "security.oauth2.client.auth-server",
+      "type": "java.lang.String",
+      "sourceType": "com.briup.common.web.auth.LoginController"
+    },
+    {
+      "name": "security.oauth2.client.client-id",
+      "type": "java.lang.String",
+      "sourceType": "com.briup.common.web.auth.LoginController"
+    },
+    {
+      "name": "security.oauth2.client.client-secret",
+      "type": "java.lang.String",
+      "sourceType": "com.briup.common.web.auth.LoginController"
+    },
+    {
+      "name": "security.oauth2.client.grant-type",
+      "type": "java.lang.String",
+      "sourceType": "com.briup.common.web.auth.LoginController"
+    }
+  ],
+  "hints": []
+}

@@ -1,0 +1,6 @@
+server:
+  port: 9999
+
+logging:
+  level:
+    com.dms.common.mapper: debug

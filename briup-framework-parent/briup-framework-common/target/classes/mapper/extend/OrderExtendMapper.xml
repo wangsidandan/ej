@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.briup.common.mapper.extend.OrderExtendMapper">
+
+  <resultMap type="com.briup.common.domain.extend.OrderExtend" id="OrderExtendResultMap" 
+  				extends="com.briup.common.mapper.basic.OrderMapper.BaseResultMap">
+  		<association property="customer" select="com.briup.common.mapper.basic.CustomerMapper.selectByPrimaryKey" column="customer_id"></association>
+  		<association property="waiter" select="com.briup.common.mapper.basic.WaiterMapper.selectByPrimaryKey" column="waiter_id"></association>
+  		<association property="address" select="com.briup.common.mapper.basic.AddressMapper.selectByPrimaryKey" column="address_id"></association>
+  		<collection property="orderlines" select="com.briup.common.mapper.extend.OrderlineExtendMapper.findOrderlineByOrderId" column="id"></collection>
+ </resultMap>
+  
+  <select id="cascadeByCustomerId" parameterType="long" resultMap="OrderExtendResultMap">
+  		select * from ej_order where customer_id=#{customerId}
+  </select>
+  
+  	<select id="cascadeByCId" parameterType="long" resultMap="OrderExtendResultMap">
+  		select * from ej_order where id=#{id}
+  	</select>			
+  	<!-- 用map传值时，记得使用parameterType而不是parameterMap -->
+  <update id="takeOrder" parameterType="map">
+  	<!--注意：mysql中更新两个字段的用法  -->
+  		update ej_order set status="已接单",waiter_id=#{waiterId} where id=#{orderId}
+  </update>
+  
+  <update id="finishOrder" parameterType="map">
+  		update ej_order set status="订单完成",waiter_id=#{waiterId} where id=#{orderId}
+  </update>
+</mapper>

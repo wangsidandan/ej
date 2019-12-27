@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.briup.common.mapper.extend.OrderlineExtendMapper">
+	<resultMap type="com.briup.common.domain.extend.OrderlineExtend" 
+				id="OrderlineResultMap"
+				extends="com.briup.common.mapper.basic.OrderlineMapper.BaseResultMap"
+				>
+		<association property="product" select="com.briup.common.mapper.basic.ProductMapper.selectByPrimaryKey" column="product_id"></association>
+	</resultMap>
+	
+  <select id="findOrderlineByOrderId" parameterType="long" resultMap="OrderlineResultMap">
+  		select * from ej_order_line where order_id=#{orderId}
+  </select>
+</mapper>

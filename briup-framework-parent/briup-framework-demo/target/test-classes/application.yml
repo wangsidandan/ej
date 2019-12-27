@@ -1,0 +1,50 @@
+spring:
+  profiles:
+    active: dev
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+
+briup:
+  common:
+    cors:
+      enabled: true     # 开启common模块的跨域访问的自动配置
+      allow-domains:
+        - http://localhost:63342
+        - http://localhost:63343
+        - "*"
+    global-exception:
+      enabled: true     # 开启common模块的全局异常处理的自动配置
+    datasource:
+      enabled: true     # 开启common模块的默认数据源的自动配置 
+    mybatis:             
+      enabled: true     # 开启common模块的默认mybatis的自动配置
+    logging:              
+      enabled: true     # 开启common模块的默认日志的自动配置
+    auth:                 
+      enabled: true     # 开启common模块的默认的认证端点的自动配置
+    swagger:
+      enabled: true     # 开启common模块的默认swagger的自动配置       
+#      base-package:
+#      title:
+#      description:
+#      terms-of-service-url:
+#      version:
+
+
+
+auth-server: http://localhost:9999 # 认证服务器地址
+
+security:
+  oauth2:
+    client:
+      auth-server: ${auth-server}
+      client-id: briup-user
+      client-secret: briup-user
+      scope: all
+      grant-type: password
+      access-token-uri: ${auth-server}/oauth/token
+      user-authorization-uri: ${auth-server}/oauth/authorize
+    resource:
+      token-info-uri: ${auth-server}/oauth/check_token
